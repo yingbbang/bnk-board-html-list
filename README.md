@@ -8,21 +8,31 @@
 
 ---
 <br>
-# index.html(list)
-<img src="https://github.com/yingbbang/bnk-board-html/blob/main/board/assets/dummy/snapshot-001.png">
-<br>
-# view.html(view)
-<img src="https://github.com/yingbbang/bnk-board-html/blob/main/board/assets/dummy/snapshot-002.png">
-<br>
-# write.html(write)
+
+### index.html (list)
+<img src="https://github.com/yingbbang/bnk-board-html/blob/main/board/assets/dummy/snapshot-index.png">
+
+### view.html (view)
+<img src="https://github.com/yingbbang/bnk-board-html/blob/main/board/assets/dummy/snapshot-view.png">
+
+### write.html (write)
 <img src="https://github.com/yingbbang/bnk-board-html/blob/main/board/assets/dummy/snapshot-003.png">
-<br>
-# edit.html(edit)
+
+### edit.html (edit)
 <img src="https://github.com/yingbbang/bnk-board-html/blob/main/board/assets/dummy/snapshot-004.png">
-<br>
-# delete.html(delete)
+
+### delete.html (delete)
 <img src="https://github.com/yingbbang/bnk-board-html/blob/main/board/assets/dummy/snapshot-005.png">
-<br>
+
+### ERD
+<img src="https://github.com/yingbbang/bnk-board-html/blob/main/board/assets/dummy/erd.png">
+
+### data-dictionary
+<img src="https://github.com/yingbbang/bnk-board-html/blob/main/board/assets/dummy/data-dictionary.png">
+
+### code-definition
+<img src="https://github.com/yingbbang/bnk-board-html/blob/main/board/assets/dummy/code-definition.png">
+
 
 ## 1. 프로젝트 목적
 
@@ -40,6 +50,7 @@
 - 게시글 상세: `view.html`
 - 게시글 등록: `write.html`
 - 게시글 수정: `edit.html`
+- 게시글 삭제: `delete.html`
 
 ### 문서 (Schema)
 
