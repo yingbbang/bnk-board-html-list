@@ -29,9 +29,9 @@
 
   </div>
 
-  <!-- 상단 배너 (안내/광고) -->
+  <!-- 상단 배너 -->
   <div class="board-banner board-banner--top">
-    게시판 성격에 맞는 내용을 작성해 주세요.  
+    게시판 성격에 맞는 내용을 작성해 주세요.<br>
     광고·비방·부적절한 내용은 관리자에 의해 삭제될 수 있습니다.
   </div>
 
@@ -41,44 +41,85 @@
     <!-- 카테고리 -->
     <div class="form-group">
       <label for="category">카테고리</label>
-<select id="category" required>
-  <option value="">선택</option>
-
-  <option value="IT">IT·시스템: 전산공지, 장애 공지</option>
-  <option value="SECURITY">보안: 금융권 필수</option>
-  <option value="DIGITAL">디지털금융: BNK DT 방향성</option>
-  <option value="FINANCE_PRODUCT">금융상품: 예금·대출·펀드</option>
-  <option value="PENSION">퇴직연금: BNK 핵심 도메인</option>
-  <option value="CORPORATE">기업금융: BNK 정체성</option>
-  <option value="RETAIL">개인금융: 소매 고객</option>
-  <option value="DIGITAL_ASSET">디지털자산: 실험/미래</option>
-  <option value="CSR">사회공헌(CSR): 지역은행 필수</option>
-  <option value="EVENT">이벤트·프로모션: 마케팅·고객유치</option>
-</select>
-
+      <select id="category" required>
+        <option value="">선택</option>
+        <option value="IT">IT·시스템</option>
+        <option value="SECURITY">보안</option>
+        <option value="DIGITAL">디지털금융</option>
+        <option value="FINANCE_PRODUCT">금융상품</option>
+        <option value="PENSION">퇴직연금</option>
+        <option value="CORPORATE">기업금융</option>
+        <option value="RETAIL">개인금융</option>
+        <option value="DIGITAL_ASSET">디지털자산</option>
+        <option value="CSR">사회공헌(CSR)</option>
+        <option value="EVENT">이벤트·프로모션</option>
+      </select>
     </div>
 
-    <!-- 작성자 닉네임 -->
-    <div class="form-group">
-      <label for="writer">작성자</label>
-      <input
-        type="text"
-        id="writer"
-        placeholder="익명"
-        maxlength="20"
-      >
+    <!-- 작성자 + 비밀번호 (같은 줄) -->
+    <div class="form-group form-inline">
+      <div class="form-inline-item">
+        <label for="writer">작성자</label>
+        <input
+          type="text"
+          id="writer"
+          placeholder="익명"
+          maxlength="20"
+        >
+      </div>
+
+      <div class="form-inline-item">
+        <label for="password">비밀번호</label>
+        <input
+          type="password"
+          id="password"
+          maxlength="20"
+          placeholder="수정/삭제용"
+          required
+        >
+      </div>
     </div>
 
     <!-- 제목 -->
     <div class="form-group">
       <label for="title">제목</label>
-      <input type="text" id="title" required>
+      <input
+        type="text"
+        id="title"
+        placeholder="제목을 입력해 주세요."
+        required
+      >
     </div>
 
     <!-- 내용 -->
     <div class="form-group">
       <label for="content">내용</label>
-      <textarea id="content" rows="8" required></textarea>
+      <textarea
+        id="content"
+        rows="8"
+        placeholder="내용을 입력해 주세요."
+        required
+      ></textarea>
+    </div>
+
+    <!-- 첨부파일 (최대 5개) -->
+    <div class="form-group">
+      <label for="attachments">첨부파일</label>
+      <input
+        type="file"
+        id="attachments"
+        multiple
+        accept="*/*"
+      >
+      <small class="form-help">
+        ※ 첨부파일은 최대 5개까지 등록할 수 있습니다.
+      </small>
+    </div>
+
+    <!-- 안내 문구 -->
+    <div class="form-notice">
+      ※ 쉬운 비밀번호를 입력하면 타인의 수정·삭제가 가능합니다.<br>
+      ※ 음란물·차별·비하·혐오·저작권 침해 게시물은 민·형사상 책임을 질 수 있습니다.
     </div>
 
     <!-- 액션 -->
