@@ -65,15 +65,90 @@
 
 ```text
 bnk-board-html/
- └─ board/
-    ├─ index.html
-    ├─ view.html
-    ├─ write.html
-    ├─ edit.html
-    ├─ assets/
-    │  ├─ css/
-    │  ├─ js/
-    │  └─ schema/
-    │     ├─ data-dictionary.html
-    │     ├─ code-definition.html
-    │     └─ erd.png
+│
+├─ README.md
+│   └─ 프로젝트 목적, 설계 원칙, 문서/버전 관리 정책 설명
+│
+└─ board/
+   │
+   ├─ index.html
+   │   └─ 게시글 목록 화면 (List)
+   │      - 게시글 조회
+   │      - 상태 ACTIVE 기준 노출
+   │
+   ├─ view.html
+   │   └─ 게시글 상세 화면 (View)
+   │      - 게시글 내용 조회
+   │      - 조회수 증가
+   │      - 댓글/첨부파일 표시
+   │
+   ├─ write.html
+   │   └─ 게시글 등록 화면 (Write)
+   │      - 신규 게시글 작성
+   │      - BOARD / BOARD_STAT 생성
+   │
+   ├─ edit.html
+   │   └─ 게시글 수정 화면 (Edit)
+   │      - 게시글 수정
+   │      - BOARD_HISTORY 이력 기록
+   │
+   └─ assets/
+      │
+      ├─ css/
+      │  ├─ common.css
+      │  │   └─ 공통 스타일
+      │  │      - 레이아웃
+      │  │      - 폰트
+      │  │      - 기본 UI 규칙
+      │  │
+      │  └─ board.css
+      │      └─ 게시판 전용 스타일
+      │         - 목록/상세/작성 화면 개별 스타일
+      │
+      ├─ js/
+      │  ├─ storage.js
+      │  │   └─ localStorage 기반 데이터 저장소
+      │  │      - DB 대체 역할
+      │  │
+      │  ├─ seed.js
+      │  │   └─ 초기 데이터 세팅
+      │  │      - 최초 1회 실행
+      │  │
+      │  ├─ util.js
+      │  │   └─ 공통 유틸 함수
+      │  │      - 날짜 포맷
+      │  │      - 쿼리스트링 파싱
+      │  │      - DOM 헬퍼
+      │  │
+      │  ├─ board_list.js
+      │  │   └─ index.html 전용 로직
+      │  │      - 게시글 목록 조회
+      │  │
+      │  ├─ board_view.js
+      │  │   └─ view.html 전용 로직
+      │  │      - 상세 조회
+      │  │      - 조회수 증가
+      │  │
+      │  ├─ board_write.js
+      │  │   └─ write.html 전용 로직
+      │  │      - 게시글 등록 처리
+      │  │
+      │  └─ board_edit.js
+      │      └─ edit.html 전용 로직
+      │         - 게시글 수정
+      │         - 이력 기록
+      │
+      └─ schema/
+         ├─ data-dictionary.html
+         │   └─ 데이터 사전
+         │      - 테이블 구조
+         │      - 컬럼 의미
+         │      - 설계 원칙
+         │
+         ├─ code-definition.html
+         │   └─ 코드 정의서
+         │      - role / status / type / category 코드 규칙
+         │
+         └─ erd.png
+             └─ 게시판 전체 ERD 시각 자료
+
