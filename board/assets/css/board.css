@@ -1,3 +1,21 @@
+/* 상단 고정 공지 행 */
+.board-table tr.pinned {
+  background-color: #fff4f4;
+}
+
+/* 공지 아이콘 */
+.notice-icon {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #c00;
+  border: 1px solid #c00;
+  border-radius: 4px;
+}
+
+
 /* =================================================
    Board Header (공통)
    - 로고(1행) + 타이틀/액션(2행) 구조
@@ -320,18 +338,24 @@
 }
 
 
-/* 번호, 글쓴이, 날짜, 조회, 추천 중앙정렬 */
+/* 번호, 카테고리, 글쓴이, 날짜, 조회, 추천 중앙정렬 */
 .board-table th:nth-child(1),
 .board-table td:nth-child(1),
-.board-table th:nth-child(3),
-.board-table td:nth-child(3),
 .board-table th:nth-child(4),
 .board-table td:nth-child(4),
 .board-table th:nth-child(5),
 .board-table td:nth-child(5),
 .board-table th:nth-child(6),
-.board-table td:nth-child(6) {
+.board-table td:nth-child(6),
+.board-table th:nth-child(7),
+.board-table td:nth-child(7) {
   text-align: center;
+}
+
+/* 제목 컬럼만 왼쪽 정렬 */
+.board-table th:nth-child(3),
+.board-table td:nth-child(3) {
+  text-align: left;
 }
 
 
@@ -356,3 +380,34 @@
   background: url("../icons/icon-image.svg") no-repeat center;
   background-size: contain;
 }
+
+
+/* =================================================
+   Footer
+   ================================================= */
+
+.board-footer {
+  margin-top: 40px;
+  padding: 16px 0;
+  text-align: center;
+  border-top: 1px solid #e5e7eb;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.footer-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #374151;
+}
+
+.footer-github img {
+  width: 18px;
+  height: 18px;
+}
+
+.footer-github:hover {
+  text-decoration: underline;
+}
+
