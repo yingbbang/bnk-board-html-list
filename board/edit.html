@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>BNK Board - Edit</title>
+</head>
+<body>
+
+<h1>글 수정</h1>
+
+<form id="editForm">
+  <div>
+    <input type="text" id="title" required>
+  </div>
+  <div>
+    <textarea id="content" rows="6" required></textarea>
+  </div>
+  <button type="submit">수정</button>
+  <button type="button" onclick="history.back()">취소</button>
+</form>
+
+<script src="assets/js/storage.js"></script>
+<script src="assets/js/util.js"></script>
+<script>
+  const id = Number(Util.qs("id"));
+  const boards = StorageDB.get("BOARD", []);
+  const histories = StorageDB.get("BOARD_HISTORY", []);
+
+  const board = boards.find(b => b.id === id);
+  if (!board) {
+    alert("게시글 없음");
+    history.back();
+  }
+
+  title.value = board.title;
+  content.value = board.content;
+
+  document.getElementById("editForm").addEventListener("submit", e => {
+    e.preventDefault();
+
+    histories.push({
+      history_id: StorageDB.nextId("SEQ_HISTORY_ID"),
+      board_id: id,
+      before_content: board.content,
+      after_content: content.value,
+      updated_by: 1,
+      updated_at: new Date().toISOString()
+    });
+
+    board.title = title.value;
+    board.content = content.value;
+    board.updated_at = new Date().toISOString();
+    board.updated_by = 1;
+    board.version++;
+
+    StorageDB.set("BOARD", boards);
+    StorageDB.set("BOARD_HISTORY", histories);
+
+    location.href = `view.html?id=${id}`;
+  });
+</script>
+
+</body>
+</html>

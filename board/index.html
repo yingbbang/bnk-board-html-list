@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>BNK Board - List</title>
+  <link rel="stylesheet" href="assets/css/common.css">
+</head>
+<body>
+
+<h1>게시판 목록</h1>
+
+<button onclick="location.href='write.html'">글쓰기</button>
+
+<table border="1" width="100%" style="margin-top:10px;">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>제목</th>
+      <th>게시판</th>
+      <th>카테고리</th>
+      <th>상태</th>
+      <th>조회수</th>
+      <th>작성일</th>
+    </tr>
+  </thead>
+  <tbody id="boardList"></tbody>
+</table>
+
+<script src="assets/js/storage.js"></script>
+<script src="assets/js/seed.js"></script>
+<script src="assets/js/util.js"></script>
+<script>
+  const boards = StorageDB.get("BOARD", []);
+  const stats  = StorageDB.get("BOARD_STAT", []);
+
+  const tbody = document.getElementById("boardList");
+
+  boards
+    .filter(b => b.status === "ACTIVE")
+    .forEach(b => {
+      const stat = stats.find(s => s.board_id === b.id) || {};
+      const tr = document.createElement("tr");
+
+      tr.innerHTML = `
+        <td>${b.id}</td>
+        <td>
+          <a href="view.html?id=${b.id}">
+            ${Util.escapeHtml(b.title)}
+          </a>
+        </td>
+        <td>${b.board_type_code}</td>
+        <td>${b.category_code}</td>
+        <td>${b.status}</td>
+        <td>${stat.view_count || 0}</td>
+        <td>${Util.fmt(b.created_at)}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+</script>
+
+</body>
+</html>
