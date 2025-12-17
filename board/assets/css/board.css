@@ -113,3 +113,36 @@
   background: #eceff1;
   color: #37474f;
 }
+
+
+
+
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.board-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.board-logo {
+  height: 28px;          /* 지금보다 살짝 줄이는 게 정답 */
+}
+
+.board-header h1 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.board-table {
+  margin-top: 12px;   /* mt-20 줄이거나 제거해도 됨 */
+}
+
+.board-table td:nth-child(3) {
+  text-align: center;
+}

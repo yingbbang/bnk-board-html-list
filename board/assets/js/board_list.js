@@ -1,6 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const boards = StorageDB.get("BOARD", []);
-  const stats  = StorageDB.get("BOARD_STAT", []);
+  const boards = StorageDB.get("BOARD") || [];
+
+  // 최신글 우선 정렬 (created_at DESC) 상태 ACTIVE만 노출 + 최신 정렬
+  boards.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+
+  boards.sort((a, b) => {
+  if (a.is_notice && !b.is_notice) return -1;
+  if (!a.is_notice && b.is_notice) return 1;
+  return new Date(b.created_at) - new Date(a.created_at);
+});
+
+  const stats = StorageDB.get("BOARD_STAT", []);
 
   const tbody = document.getElementById("boardList");
   tbody.innerHTML = "";
