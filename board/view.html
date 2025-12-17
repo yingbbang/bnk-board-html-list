@@ -19,8 +19,6 @@
 <button onclick="softDelete()">삭제</button>
 <button onclick="location.href='index.html'">목록</button>
 
-<script src="assets/js/storage.js"></script>
-<script src="assets/js/util.js"></script>
 <script>
   const id = Number(Util.qs("id"));
   const boards = StorageDB.get("BOARD", []);
@@ -32,12 +30,6 @@
     location.href = "index.html";
   }
 
-  // 조회수 증가
-  const stat = stats.find(s => s.board_id === id);
-  if (stat) {
-    stat.view_count++;
-    StorageDB.set("BOARD_STAT", stats);
-  }
 
   document.getElementById("content").innerHTML = `
     <h2>${Util.escapeHtml(board.title)}</h2>
