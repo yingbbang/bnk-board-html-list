@@ -9,15 +9,26 @@
 </head>
 <body>
 
-<h1>게시글 상세</h1>
+<div class="container">
+  <div class="board-view">
 
-<div id="content"></div>
+    <h1 class="page-title">게시글 상세</h1>
 
-<hr>
+    <div class="board-view-header">
+      <h2 class="title"></h2>
+      <div class="meta"></div>
+    </div>
 
-<button onclick="goEdit()">수정</button>
-<button onclick="softDelete()">삭제</button>
-<button onclick="location.href='index.html'">목록</button>
+    <div class="board-view-content content"></div>
+
+    <div class="board-view-actions actions">
+      <button id="btnEdit">수정</button>
+      <button id="btnDelete">삭제</button>
+      <button onclick="location.href='index.html'">목록</button>
+    </div>
+
+  </div>
+</div>
 
 <script>
   const id = Number(Util.qs("id"));
