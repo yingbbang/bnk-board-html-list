@@ -19,15 +19,14 @@
 
 .board-action-row {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
-.board-action-row h1 {
-  margin: 0;
-  font-size: 22px;
-  font-weight: 600;
+/* 핵심 */
+.board-action-row .primary {
+  margin-left: auto;
 }
+
 
 /* =================================================
    Board List Table
@@ -132,10 +131,25 @@
   border-radius: 10px;
 }
 
-.status.ACTIVE   { background: #e3f2fd; color: #1565c0; }
-.status.HIDDEN   { background: #fff3e0; color: #ef6c00; }
-.status.DELETED  { background: #fbe9e7; color: #c62828; }
-.status.LOCKED   { background: #eceff1; color: #37474f; }
+.status.ACTIVE {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.status.HIDDEN {
+  background: #fff3e0;
+  color: #ef6c00;
+}
+
+.status.DELETED {
+  background: #fbe9e7;
+  color: #c62828;
+}
+
+.status.LOCKED {
+  background: #eceff1;
+  color: #37474f;
+}
 
 /* =================================================
    Attachment (View)
@@ -197,4 +211,148 @@
   margin-top: 4px;
   font-size: 12px;
   color: #6b7280;
+}
+
+/* =================================================
+   Global Area (Logo + Search)
+   ================================================= */
+
+.board-global {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.board-search {
+  display: flex;
+  gap: 6px;
+}
+
+.board-search input {
+  padding: 6px 8px;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+}
+
+/* =================================================
+   Category Tabs
+   ================================================= */
+
+.board-category {
+  display: flex;
+  gap: 8px;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.board-category button {
+  background: none;
+  border: none;
+  padding: 6px 8px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #374151;
+}
+
+.board-category button.active {
+  font-weight: 600;
+  border-bottom: 2px solid #2563eb;
+}
+
+/* =================================================
+   Board Banner (Top / Bottom)
+   ================================================= */
+
+.board-banner {
+  text-align: center;
+}
+
+.board-banner img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 상단 배너: 정보성 */
+.board-banner--top {
+  margin: 16px 0;
+  padding: 12px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+/* 하단 배너: 이벤트/홍보 */
+.board-banner--bottom {
+  margin-top: 32px;
+  padding: 16px;
+  background: #eef2ff;
+  border: 1px dashed #c7d2fe;
+}
+
+/* =================================================
+   Pagination
+   ================================================= */
+
+.board-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 24px;
+}
+
+.board-pagination button {
+  padding: 6px 10px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  cursor: pointer;
+}
+
+.board-pagination button.active {
+  font-weight: 600;
+  background: #e5e7eb;
+}
+
+.board-action-row {
+  display: flex;
+  align-items: center;
+}
+
+
+/* 번호, 글쓴이, 날짜, 조회, 추천 중앙정렬 */
+.board-table th:nth-child(1),
+.board-table td:nth-child(1),
+.board-table th:nth-child(3),
+.board-table td:nth-child(3),
+.board-table th:nth-child(4),
+.board-table td:nth-child(4),
+.board-table th:nth-child(5),
+.board-table td:nth-child(5),
+.board-table th:nth-child(6),
+.board-table td:nth-child(6) {
+  text-align: center;
+}
+
+
+/* 첨부파일 아이콘 (목록용) */
+.attach-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  vertical-align: middle;
+  background: url("../icons/icon-image.svg") no-repeat center;
+  background-size: contain;
+  flex-shrink: 0;
+}
+
+.attach-icon.image {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  display: inline-block;
+  vertical-align: middle;
+  background: url("../icons/icon-image.svg") no-repeat center;
+  background-size: contain;
 }

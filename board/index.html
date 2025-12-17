@@ -10,41 +10,93 @@
 </head>
 
 <body>
-
   <div class="container">
 
-<div class="board-header">
+    <!-- =========================
+       1. 글로벌 영역 (로고 + 검색)
+       ========================= -->
+    <div class="board-global">
 
-  <!-- 1행: 로고 -->
-  <div class="board-logo-row">
-    <a href="index.html" class="logo-link">
-      <img src="./assets/logo/topBrLogo2.png" alt="BNK 부산은행" class="board-logo" />
-    </a>
-  </div>
+      <div class="board-logo-row">
+        <a href="index.html" class="logo-link">
+          <img src="./assets/logo/topBrLogo2.png" alt="BNK 부산은행" class="board-logo">
+        </a>
+      </div>
 
-  <!-- 2행: 게시판 목록 + 글쓰기 (같은 높이) -->
-  <div class="board-action-row">
-    <h1 class="board-title-text">게시판 목록</h1>
-    <button class="primary" onclick="location.href='write.html'">글쓰기</button>
-  </div>
+      <div class="board-search">
+        <input type="text" placeholder="검색어를 입력하세요">
+        <button>검색</button>
+      </div>
 
-</div>
+    </div>
 
+    <!-- =========================
+       2. 카테고리 영역
+       ========================= -->
+    <div class="board-category">
+      <button class="active">전체</button>
+      <button>IT</button>
+      <button>CSR</button>
+      <button>금융상품</button>
+      <button>디지털자산</button>
+    </div>
 
+    <!-- =========================
+       3. 상단 정보 배너 (1순위)
+       ========================= -->
+    <div class="board-banner board-banner--top">
+      <a href="#">
+        <img src="./assets/banner/banner-info.png" alt="BNK 안내 배너">
+      </a>
+    </div>
 
+    <!-- =========================
+       4. 게시판 헤더 (제목 + 글쓰기)
+       ========================= -->
+    <div class="board-header">
+      <div class="board-action-row">
+        <h1 class="board-title-text">게시판 목록</h1>
+        <button class="primary" onclick="location.href='write.html'">글쓰기</button>
+      </div>
+    </div>
 
-    <table class="board-table mt-20">
+    <!-- =========================
+       5. 게시판 목록 (밀도형)
+       ========================= -->
+    <table class="board-table">
       <thead>
         <tr>
-          <th>ID</th>
+          <th class="text-center">번호</th>
           <th>제목</th>
-          <th>상태</th>
-          <th>조회수</th>
-          <th>작성일</th>
+          <th class="text-center">글쓴이</th>
+          <th class="text-center">작성일</th>
+          <th class="text-center">조회</th>
+          <th class="text-center">추천</th>
         </tr>
       </thead>
       <tbody id="boardList"></tbody>
     </table>
+
+    <!-- =========================
+       6. 페이지네이션
+       ========================= -->
+    <div class="board-pagination">
+      <button>&laquo;</button>
+      <button class="active">1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>&raquo;</button>
+    </div>
+
+    <!-- =========================
+       7. 하단 이벤트 배너 (2순위)
+       ========================= -->
+    <div class="board-banner board-banner--bottom">
+      <a href="#">
+        <img src="./assets/banner/banner-event.png" alt="BNK 이벤트 배너">
+      </a>
+    </div>
+
   </div>
 
   <!-- 공통 스크립트 -->
@@ -56,5 +108,4 @@
   <script src="./assets/js/board_list.js"></script>
 
 </body>
-
 </html>
