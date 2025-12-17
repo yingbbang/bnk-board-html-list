@@ -17,7 +17,8 @@
 <img src="https://github.com/yingbbang/bnk-board-html/blob/main/board/assets/dummy/snapshot-view.png">
 
 ### write.html (write)
-<img src="https://github.com/yingbbang/bnk-board-html/blob/main/board/assets/dummy/snapshot-write.png">
+<a href="https://yingbbang.github.io/bnk-board-html/board/write.html"> 
+<img src="https://github.com/yingbbang/bnk-board-html/blob/main/board/assets/dummy/snapshot-write.png"></a>
 
 ### edit.html (edit)
 <img src="https://github.com/yingbbang/bnk-board-html/blob/main/board/assets/dummy/snapshot-edit.png">
