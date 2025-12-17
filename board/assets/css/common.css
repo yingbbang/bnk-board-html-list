@@ -138,3 +138,14 @@ textarea {
 .mt-20 {
   margin-top: 20px;
 }
+
+.board-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.board-logo {
+  height: 32px;   /* 금융권 기준: 작게, 절제 */
+  object-fit: contain;
+}
