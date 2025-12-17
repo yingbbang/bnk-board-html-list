@@ -86,7 +86,8 @@
    ================================================= */
 
 .board-view {
-  margin-top: 24px;
+  padding: 20px;
+  background: #fff;
 }
 
 .board-view-header {
@@ -114,14 +115,16 @@
   min-height: 200px;
 }
 
-.board-view-actions {
-  margin-top: 24px;
-  padding-top: 16px;
-  border-top: 1px solid #e5e7eb;
-  display: flex;
-  gap: 8px;
-  justify-content: flex-end;
+.board-view {
+  padding: 20px;
+  background: #fff;
 }
+
+.board-view-actions {
+  margin-top: 20px;
+  text-align: right;
+}
+
 
 /* =================================================
    Board Form (Write / Edit)
@@ -411,3 +414,46 @@
   text-decoration: underline;
 }
 
+.board-view-header {
+  padding-bottom: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.board-view-header .title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.meta-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #555;
+}
+
+.meta-left,
+.meta-right {
+  display: flex;
+  gap: 6px;
+}
+
+.divider {
+  color: #bbb;
+}
+
+
+.board-like {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.board-like button {
+  padding: 6px 14px;
+}
+
+.board-like .like-count {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #444;
+}
