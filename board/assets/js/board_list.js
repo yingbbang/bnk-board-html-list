@@ -26,7 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
         </a>
       </td>
 
-      <td class="text-center">${b.writer_name || "운영자"}</td>
+<td class="text-center">${b.writer || "익명"}</td>
+
       <td class="text-center">${Util.fmt(b.created_at)}</td>
       <td class="text-center">${stat.view_count}</td>
       <td class="text-center">${stat.like_count || 0}</td>
