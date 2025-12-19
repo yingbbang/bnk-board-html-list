@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
    * ========================= */
   const id = Number(Util.qs("id"));
 
-  const boards   = StorageDB.get("BOARD") || [];
-  const stats    = StorageDB.get("BOARD_STAT") || [];
+  const boards = StorageDB.get("BOARD") || [];
+  const stats = StorageDB.get("BOARD_STAT") || [];
   const comments = StorageDB.get("BOARD_COMMENT") || [];
 
   // 임시 로그인 정보 (추후 인증 연동)
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const categoryName = CATEGORY_LABEL[board.category] || "게시판";
   document.getElementById("viewCategory").textContent = categoryName;
-  document.getElementById("boardTitle").textContent  = categoryName;
+  document.getElementById("boardTitle").textContent = categoryName;
 
   /* =========================
    * 4. 게시글 상단 UX
@@ -209,7 +209,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================
-   * 11. 삭제 버튼 → delete.html
+ * 11. 수정 버튼 → edit.html
+ * ========================= */
+  const btnEdit = document.getElementById("btnEdit");
+  if (btnEdit) {
+    btnEdit.addEventListener("click", () => {
+      location.href = `edit.html?id=${id}`;
+    });
+  }
+
+
+  /* =========================
+   * 12. 삭제 버튼 → delete.html
    * ========================= */
   const btnDelete = document.getElementById("btnDelete");
 

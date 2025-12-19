@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8" />
   <title>BNK Board - Delete</title>
@@ -8,66 +9,102 @@
   <link rel="stylesheet" href="./assets/css/board.css">
 
   <style>
-    /* delete 화면 전용 최소 스타일(공통 CSS에 영향 없음) */
-    .delete-box{
-      background:#fff;
-      border:1px solid #e5e7eb;
-      border-radius:12px;
-      padding:24px;
-      margin-top:16px;
+    .delete-box {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 16px;
     }
-    .delete-title{
-      font-size:18px;
-      font-weight:700;
-      margin-bottom:8px;
+
+    .delete-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
     }
-    .delete-desc{
-      color:#6b7280;
-      line-height:1.5;
-      margin-bottom:16px;
+
+    .delete-desc {
+      color: #6b7280;
+      line-height: 1.5;
+      margin-bottom: 16px;
     }
-    .delete-info{
-      background:#f9fafb;
-      border:1px solid #eef2f7;
-      border-radius:10px;
-      padding:14px;
-      margin-bottom:18px;
+
+    .delete-info {
+      background: #f9fafb;
+      border: 1px solid #eef2f7;
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 18px;
     }
-    .delete-info .row{
-      display:flex;
-      gap:10px;
-      padding:6px 0;
+
+    .delete-info .row {
+      display: flex;
+      gap: 10px;
+      padding: 6px 0;
     }
-    .delete-info .k{
-      width:90px;
-      color:#6b7280;
-      flex:0 0 auto;
+
+    .delete-info .k {
+      width: 90px;
+      color: #6b7280;
+      flex: 0 0 auto;
     }
-    .delete-info .v{
-      color:#111827;
-      word-break:break-word;
+
+    .delete-info .v {
+      color: #111827;
+      word-break: break-word;
     }
-    .delete-actions{
-      display:flex;
-      gap:10px;
-      justify-content:flex-end;
-      margin-top:12px;
+
+    .pw-block {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed #e5e7eb;
     }
-    .btn-danger{
-      background:#dc2626;
-      border:1px solid #dc2626;
-      color:#fff;
-      padding:10px 14px;
-      border-radius:10px;
-      cursor:pointer;
+
+    .pw-label {
+      display: block;
+      font-size: 13px;
+      color: #374151;
+      margin-bottom: 6px;
+      font-weight: 600;
     }
-    .btn-ghost{
-      background:#fff;
-      border:1px solid #d1d5db;
-      color:#111827;
-      padding:10px 14px;
-      border-radius:10px;
-      cursor:pointer;
+
+    .pw-input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      outline: none;
+    }
+
+    .pw-help {
+      margin-top: 6px;
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .delete-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      margin-top: 12px;
+    }
+
+    .btn-danger {
+      background: #dc2626;
+      border: 1px solid #dc2626;
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .btn-ghost {
+      background: #fff;
+      border: 1px solid #d1d5db;
+      color: #111827;
+      padding: 10px 14px;
+      border-radius: 10px;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -75,9 +112,6 @@
 <body>
   <div class="container">
 
-    <!-- =========================
-       1. 글로벌 영역 (로고 + 검색)
-       ========================= -->
     <div class="board-global">
       <div class="board-logo-row">
         <a href="index.html" class="logo-link">
@@ -91,18 +125,12 @@
       </div>
     </div>
 
-    <!-- =========================
-       2. 헤더
-       ========================= -->
     <div class="board-header">
       <div class="board-action-row">
         <h1 class="board-title-text">게시글 삭제</h1>
       </div>
     </div>
 
-    <!-- =========================
-       3. 삭제 확인 박스
-       ========================= -->
     <div class="delete-box">
       <div class="delete-title">정말 삭제하시겠습니까?</div>
       <div class="delete-desc">
@@ -110,34 +138,33 @@
         (status = DELETED, deleted_at 저장)
       </div>
 
-      <div class="delete-info" id="deleteInfo">
-        <!-- JS로 채움 -->
+      <div class="delete-info" id="deleteInfo"></div>
+
+      <!-- ✅ 익명글일 때만 표시 -->
+      <div class="pw-block" id="pwBlock" style="display:none;">
+        <label class="pw-label" for="deletePw">삭제 비밀번호</label>
+        <input class="pw-input" type="password" id="deletePw" placeholder="작성 시 설정한 비밀번호를 입력">
+        <div class="pw-help">익명글은 비밀번호 확인 후 삭제됩니다.</div>
       </div>
 
       <div class="delete-actions">
-        <button class="btn-ghost" id="btnCancel">취소</button>
-        <button class="btn-danger" id="btnConfirmDelete">삭제</button>
+        <button class="btn-ghost" id="btnCancel" type="button">취소</button>
+        <button class="btn-danger" id="btnConfirmDelete" type="button">삭제</button>
       </div>
     </div>
 
-    <!-- 하단 이동 -->
     <div style="margin-top:12px; text-align:right;">
       <button class="btn-ghost" type="button" onclick="location.href='index.html'">목록</button>
     </div>
 
   </div>
 
-  <!-- =========================
-       공통 스크립트
-       ========================= -->
   <script src="./assets/js/storage.js"></script>
   <script src="./assets/js/seed.js"></script>
   <script src="./assets/js/util.js"></script>
+  <script src="./assets/js/board_delete.js"></script>
 
 
-  <!-- =========================
-       Footer
-       ========================= -->
   <footer class="board-footer">
     <a href="https://github.com/yingbbang" target="_blank" class="footer-github">
       <img src="./assets/icons/icon-github.svg" alt="GitHub">
@@ -146,4 +173,5 @@
   </footer>
 
 </body>
+
 </html>
