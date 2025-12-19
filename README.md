@@ -16,19 +16,21 @@
 <a href="https://yingbbang.github.io/bnk-board-html-list/board/index.html"> 
 <img src="https://github.com/yingbbang/bnk-board-html-list/blob/main/board/assets/dummy/snapshot-index.png"></a>
 
-### view.html (view)
-<img src="https://github.com/yingbbang/bnk-board-html-list/blob/main/board/assets/dummy/snapshot-view.png">
+### view.html (view) ## 이미지를 누르면 해당 페이지로 이동합니다.
+<a href="https://yingbbang.github.io/bnk-board-html-list/board/view.html"> 
+<img src="https://github.com/yingbbang/bnk-board-html-list/blob/main/board/assets/dummy/snapshot-view.png"></a>
 
 ### write.html (write) ## 이미지를 누르면 해당 페이지로 이동합니다.
 <a href="https://yingbbang.github.io/bnk-board-html-list/board/write.html"> 
 <img src="https://github.com/yingbbang/bnk-board-html-list/blob/main/board/assets/dummy/snapshot-write.png"></a>
 
-### edit.html (edit)
+### edit.html (edit) ## 이미지를 누르면 해당 페이지로 이동합니다.
 <a href="https://yingbbang.github.io/bnk-board-html-list/board/edit.html"> 
 <img src="https://github.com/yingbbang/bnk-board-html-list/blob/main/board/assets/dummy/snapshot-edit.png"></a>
 
-### delete.html (delete)
-<img src="https://github.com/yingbbang/bnk-board-html-list/blob/main/board/assets/dummy/snapshot-delete.png">
+### delete.html (delete) ## 이미지를 누르면 해당 페이지로 이동합니다.
+<a href="https://yingbbang.github.io/bnk-board-html-list/board/delete.html"> 
+<img src="https://github.com/yingbbang/bnk-board-html-list/blob/main/board/assets/dummy/snapshot-delete.png"></a>
 
 ### ERD
 <img src="https://github.com/yingbbang/bnk-board-html-list/blob/main/board/assets/dummy/erd.png">
