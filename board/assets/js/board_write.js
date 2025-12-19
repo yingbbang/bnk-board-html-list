@@ -97,3 +97,4 @@ document.addEventListener("DOMContentLoaded", () => {
     location.href = "index.html";
   });
 });
+
